@@ -140,6 +140,14 @@ Is this difficulty curve balanced?
 
 Scans a code snippet and provides feedback on potential performance issues.
 
+#### Input Example:
+
+```json
+{
+  "code": "for (let i = 0; i < 10000; i++) { this.spawnEnemy(); }"
+}
+```
+
 #### Prompt Example:
 
 ```
@@ -158,6 +166,14 @@ Also, I sometimes use setInterval inside update(). Is that bad?
 
 Creates an AI state machine suggestion based on natural language behavior.
 
+#### Input Example:
+
+```json
+{
+  "description": "This enemy walks around the map until it sees the player, then it chases them. If close enough, it attacks. If it loses sight, it goes back to patrolling."
+}
+```
+
 #### Prompt Example:
 
 ```
@@ -171,6 +187,16 @@ Can you suggest a state machine?
 ### 8. `suggest_wave_timing`
 
 Suggests the ideal time between waves of enemies based on the player's DPS and enemy HP.
+
+#### Input Example:
+
+```json
+{
+  "player": { "damage": 30, "attackSpeed": 2 },
+  "enemyHp": 100,
+  "enemiesPerWave": 3
+}
+```
 
 #### Prompt Example:
 
